@@ -267,7 +267,8 @@ export function build(options) {
             "+doc-root[p|h1|h2|h3|h4|h5|h6|blockquote|code-block|div]"
         ].join(','),
         plugins: gatherPlugins(options),
-        contextmenu: false,
+        imagetools_toolbar: 'imageoptions',
+        contextmenu: 'link image imagetools table spellchecker',
         toolbar: getPrimaryToolbar(options),
         content_style: getContentStyle(options),
         style_formats,
