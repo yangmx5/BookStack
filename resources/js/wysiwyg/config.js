@@ -241,7 +241,7 @@ export function build(options) {
         ].join(','),
         plugins: gatherPlugins(options),
         imagetools_toolbar: 'imageoptions',
-        contextmenu: false,
+        contextmenu: 'link image imagetools table spellchecker',
         toolbar: getPrimaryToolbar(options),
         content_style: getContentStyle(options),
         style_formats,
