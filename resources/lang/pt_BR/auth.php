@@ -39,9 +39,9 @@ return [
     'register_success' => 'Obrigado por se cadastrar! Você agora encontra-se cadastrado(a) e logado(a).',
 
     // Login auto-initiation
-    'auto_init_starting' => 'Attempting Login',
-    'auto_init_starting_desc' => 'We\'re contacting your authentication system to start the login process. If there\'s no progress after 5 seconds you can try clicking the link below.',
-    'auto_init_start_link' => 'Proceed with authentication',
+    'auto_init_starting' => 'Tentando fazer login',
+    'auto_init_starting_desc' => 'Estamos entrando em contato com seu sistema de autenticação para iniciar o processo de login. Se não houver progresso após 5 segundos, você pode tentar clicar no link abaixo.',
+    'auto_init_start_link' => 'Prossiga com a autenticação',
 
     // Password Reset
     'reset_password' => 'Redefinir Senha',
@@ -61,6 +61,8 @@ return [
     'email_confirm_send_error' => 'A confirmação de e-mail é requerida, mas o sistema não pôde enviar a mensagem. Por favor, entre em contato com o administrador para se certificar que o serviço de envio de e-mails está corretamente configurado.',
     'email_confirm_success' => 'Seu e-mail foi confirmado! Agora você pode de entrar usando este endereço de e-mail.',
     'email_confirm_resent' => 'E-mail de confirmação reenviado. Por favor, verifique sua caixa de entrada.',
+    'email_confirm_thanks' => 'Obrigado por confirmar!',
+    'email_confirm_thanks_desc' => 'Aguarde um momento enquanto sua confirmação é processada. Se você não for redirecionado após 3 segundos, pressione o link "Continuar" abaixo para continuar.',
 
     'email_not_confirmed' => 'Endereço de E-mail Não Confirmado',
     'email_not_confirmed_text' => 'Seu endereço de e-mail ainda não foi confirmado.',

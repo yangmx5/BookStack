@@ -75,9 +75,7 @@ class TagTest extends TestCase
         $this->asEditor()->get('/ajax/tags/suggest/names?search=co')->assertSimilarJson(['color', 'country']);
 
         // Set restricted permission the page
-        $page->restricted = true;
-        $page->save();
-        $page->rebuildPermissions();
+        $this->entities->setPermissions($page, [], []);
 
         $this->asAdmin()->get('/ajax/tags/suggest/names?search=co')->assertSimilarJson(['color', 'country']);
         $this->asEditor()->get('/ajax/tags/suggest/names?search=co')->assertSimilarJson([]);
@@ -166,7 +164,7 @@ class TagTest extends TestCase
         $resp->assertSee('OtherTestContent');
         $resp->assertDontSee('OtherTagName');
         $resp->assertSee('Active Filter:');
-        $this->withHtml($resp)->assertElementCount('table .tag-item', 2);
+        $this->withHtml($resp)->assertElementCount('.item-list .tag-item', 2);
         $this->withHtml($resp)->assertElementContains('form[action$="/tags"]', 'Clear Filter');
     }
 
@@ -180,8 +178,7 @@ class TagTest extends TestCase
         $resp = $this->get('/tags?name=SuperCategory');
         $resp->assertSee('GreatTestContent');
 
-        $page->restricted = true;
-        $this->entities->regenPermissions($page);
+        $this->entities->setPermissions($page, [], []);
 
         $resp = $this->asEditor()->get('/tags');
         $resp->assertDontSee('SuperCategory');

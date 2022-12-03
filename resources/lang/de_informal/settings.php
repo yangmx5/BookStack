@@ -92,9 +92,9 @@ Hinweis: Benutzer können ihre E-Mail Adresse nach erfolgreicher Registrierung �
     'maint_send_test_email_mail_text' => 'Glückwunsch! Da du diese E-Mail Benachrichtigung erhalten hast, scheinen deine E-Mail-Einstellungen korrekt konfiguriert zu sein.',
     'maint_recycle_bin_desc' => 'Gelöschte Regale, Bücher, Kapitel & Seiten werden in den Papierkorb verschoben, so dass sie wiederhergestellt oder dauerhaft gelöscht werden können. Ältere Einträge im Papierkorb können, in Abhängigkeit von der Systemkonfiguration, nach einer Weile automatisch entfernt werden.',
     'maint_recycle_bin_open' => 'Papierkorb öffnen',
-    'maint_regen_references' => 'Regenerate References',
-    'maint_regen_references_desc' => 'This action will rebuild the cross-item reference index within the database. This is usually handled automatically but this action can be useful to index old content or content added via unofficial methods.',
-    'maint_regen_references_success' => 'Reference index has been regenerated!',
+    'maint_regen_references' => 'Verweise neu generieren',
+    'maint_regen_references_desc' => 'Diese Aktion wird den Verweisindex innerhalb der Datenbank neu erstellen. Dies wird normalerweise automatisch ausgeführt, aber diese Aktion kann nützlich sein, um alte Inhalte oder Inhalte zu indizieren, die mittels inoffizieller Methoden hinzugefügt wurden.',
+    'maint_regen_references_success' => 'Verweisindex wurde neu generiert!',
     'maint_timeout_command_note' => 'Hinweis: Die Ausführung dieser Aktion kann einige Zeit in Anspruch nehmen, was in einigen Webumgebungen zu Timeout-Problemen führen kann. Alternativ kann diese Aktion auch mit einem Terminalbefehl ausgeführt werden.',
 
     // Recycle Bin
@@ -136,6 +136,11 @@ Hinweis: Benutzer können ihre E-Mail Adresse nach erfolgreicher Registrierung �
     // Role Settings
     'roles' => 'Rollen',
     'role_user_roles' => 'Benutzer-Rollen',
+    'roles_index_desc' => 'Roles are used to group users & provide system permission to their members. When a user is a member of multiple roles the privileges granted will stack and the user will inherit all abilities.',
+    'roles_x_users_assigned' => '1 user assigned|:count users assigned',
+    'roles_x_permissions_provided' => '1 permission|:count permissions',
+    'roles_assigned_users' => 'Assigned Users',
+    'roles_permissions_provided' => 'Provided Permissions',
     'role_create' => 'Neue Rolle anlegen',
     'role_create_success' => 'Rolle erfolgreich angelegt',
     'role_delete' => 'Rolle löschen',
@@ -175,6 +180,7 @@ Hinweis: Benutzer können ihre E-Mail Adresse nach erfolgreicher Registrierung �
 
     // Users
     'users' => 'Benutzer',
+    'users_index_desc' => 'Create & manage individual user accounts within the system. User accounts are used for login and attribution of content & activity. Access permissions are primarily role-based but user content ownership, among other factors, may also affect permissions & access.',
     'user_profile' => 'Benutzerprofil',
     'users_add_new' => 'Benutzer hinzufügen',
     'users_search' => 'Benutzer suchen',
@@ -244,6 +250,8 @@ Hinweis: Benutzer können ihre E-Mail Adresse nach erfolgreicher Registrierung �
 
     // Webhooks
     'webhooks' => 'Webhooks',
+    'webhooks_index_desc' => 'Webhooks are a way to send data to external URLs when certain actions and events occur within the system which allows event-based integration with external platforms such as messaging or notification systems.',
+    'webhooks_x_trigger_events' => '1 trigger event|:count trigger events',
     'webhooks_create' => 'Neuen Webhook erstellen',
     'webhooks_none_created' => 'Es wurden noch keine Webhooks erstellt.',
     'webhooks_edit' => 'Webhook bearbeiten',
@@ -283,6 +291,7 @@ Hinweis: Benutzer können ihre E-Mail Adresse nach erfolgreicher Registrierung �
         'da' => 'Dänisch',
         'de' => 'Deutsch (Sie)',
         'de_informal' => 'Deutsch (Du)',
+        'el' => 'ελληνικά',
         'es' => 'Spanisch',
         'es_AR' => 'Spanisch Argentinisch',
         'et' => 'Estnisch',

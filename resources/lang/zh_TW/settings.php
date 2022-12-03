@@ -10,8 +10,8 @@ return [
     'settings' => '設定',
     'settings_save' => '儲存設定',
     'settings_save_success' => '設定已儲存',
-    'system_version' => 'System Version',
-    'categories' => 'Categories',
+    'system_version' => '系統版本',
+    'categories' => '分類',
 
     // App Settings
     'app_customization' => '自訂',
@@ -27,8 +27,8 @@ return [
     'app_secure_images' => '更高安全性的圖片上傳',
     'app_secure_images_toggle' => '啟用更高安全性的圖片上傳',
     'app_secure_images_desc' => '因為效能因素，所有圖片都是公開的。此選項會在圖片的網址前加入一串隨機且難以猜測的字串。確保未啟用目錄索引，讓直接進入變得更困難。',
-    'app_default_editor' => 'Default Page Editor',
-    'app_default_editor_desc' => 'Select which editor will be used by default when editing new pages. This can be overridden at a page level where permissions allow.',
+    'app_default_editor' => '預設頁面編輯器',
+    'app_default_editor_desc' => '选择编辑新页面时默认使用的编辑器。这可以在权限允许的页面级别被覆盖。',
     'app_custom_html' => '自訂 HTML 標題內容',
     'app_custom_html_desc' => '此處加入的任何內容都將插入到每個頁面的 <head> 部分的底部，這對於覆蓋樣式或加入分析程式碼很方便。',
     'app_custom_html_disabled_notice' => '在此設定頁面上停用了自訂 HTML 標題內容，以確保任何重大變更都能被還原。',
@@ -92,7 +92,7 @@ return [
     'maint_regen_references' => 'Regenerate References',
     'maint_regen_references_desc' => 'This action will rebuild the cross-item reference index within the database. This is usually handled automatically but this action can be useful to index old content or content added via unofficial methods.',
     'maint_regen_references_success' => 'Reference index has been regenerated!',
-    'maint_timeout_command_note' => 'Note: This action can take time to run, which can lead to timeout issues in some web environments. As an alternative, this action be performed using a terminal command.',
+    'maint_timeout_command_note' => '備註：這項操作需要較長的時間，可能導致多數的網路環境發生連線逾時的問題。若有需要，可以透過終端機指令來替代。',
 
     // Recycle Bin
     'recycle_bin' => '資源回收桶',
@@ -133,6 +133,11 @@ return [
     // Role Settings
     'roles' => '角色',
     'role_user_roles' => '使用者角色',
+    'roles_index_desc' => 'Roles are used to group users & provide system permission to their members. When a user is a member of multiple roles the privileges granted will stack and the user will inherit all abilities.',
+    'roles_x_users_assigned' => '1 user assigned|:count users assigned',
+    'roles_x_permissions_provided' => '1 permission|:count permissions',
+    'roles_assigned_users' => 'Assigned Users',
+    'roles_permissions_provided' => 'Provided Permissions',
     'role_create' => '建立新角色',
     'role_create_success' => '角色建立成功',
     'role_delete' => '刪除角色',
@@ -156,7 +161,7 @@ return [
     'role_access_api' => '存取系統 API',
     'role_manage_settings' => '管理應用程式設定',
     'role_export_content' => '匯出內容',
-    'role_editor_change' => 'Change page editor',
+    'role_editor_change' => '重設頁面編輯器',
     'role_asset' => '資源權限',
     'roles_system_warning' => '請注意，有上述三項權限中的任一項的使用者都可以更改自己或系統中其他人的權限。有這些權限的角色只應分配給受信任的使用者。',
     'role_asset_desc' => '對系統內資源的預設權限將由這裡的權限控制。若有單獨設定在書本、章節和頁面上的權限，將會覆寫這裡的權限設定。',
@@ -172,6 +177,7 @@ return [
 
     // Users
     'users' => '使用者',
+    'users_index_desc' => 'Create & manage individual user accounts within the system. User accounts are used for login and attribution of content & activity. Access permissions are primarily role-based but user content ownership, among other factors, may also affect permissions & access.',
     'user_profile' => '使用者個人資料',
     'users_add_new' => '新增使用者',
     'users_search' => '搜尋使用者',
@@ -241,6 +247,8 @@ return [
 
     // Webhooks
     'webhooks' => 'Webhooks',
+    'webhooks_index_desc' => 'Webhooks are a way to send data to external URLs when certain actions and events occur within the system which allows event-based integration with external platforms such as messaging or notification systems.',
+    'webhooks_x_trigger_events' => '1 trigger event|:count trigger events',
     'webhooks_create' => '建立 Webhook',
     'webhooks_none_created' => '沒有已建立的 Webhook',
     'webhooks_edit' => '設置 Webhook',
@@ -250,7 +258,7 @@ return [
     'webhooks_events' => 'Webhook Events',
     'webhooks_events_desc' => 'Select all the events that should trigger this webhook to be called.',
     'webhooks_events_warning' => 'Keep in mind that these events will be triggered for all selected events, even if custom permissions are applied. Ensure that use of this webhook won\'t expose confidential content.',
-    'webhooks_events_all' => 'All system events',
+    'webhooks_events_all' => '全部系統活動',
     'webhooks_name' => 'Webhook 名稱',
     'webhooks_timeout' => 'Webhook Request Timeout (Seconds)',
     'webhooks_endpoint' => 'Webhook Endpoint',
@@ -280,6 +288,7 @@ return [
         'da' => '丹麥',
         'de' => 'Deutsch (Sie)',
         'de_informal' => 'Deutsch (Du)',
+        'el' => 'ελληνικά',
         'es' => 'Español',
         'es_AR' => 'Español Argentina',
         'et' => 'Eesti keel',

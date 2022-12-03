@@ -133,6 +133,11 @@ return [
     // Role Settings
     'roles' => 'Rollen',
     'role_user_roles' => 'Gebruikersrollen',
+    'roles_index_desc' => 'Rollen worden gebruikt om gebruikers te groeperen en systeemrechten te geven. Wanneer een gebruiker lid is van meerdere rollen worden de toegekende rechten samengevoegd en erft de gebruiker alle mogelijkheden.',
+    'roles_x_users_assigned' => '1 gebruiker toegewezen|:count gebruikers toegewezen',
+    'roles_x_permissions_provided' => '1 machtiging|:count machtigingen',
+    'roles_assigned_users' => 'Toegewezen Gebruikers',
+    'roles_permissions_provided' => 'Verleende Machtigingen',
     'role_create' => 'Nieuwe Rol Maken',
     'role_create_success' => 'Rol succesvol aangemaakt',
     'role_delete' => 'Rol Verwijderen',
@@ -161,7 +166,7 @@ return [
     'roles_system_warning' => 'Wees ervan bewust dat toegang tot een van de bovengenoemde drie machtigingen een gebruiker in staat kan stellen zijn eigen machtigingen of de machtigingen van anderen in het systeem kan wijzigen. Wijs alleen rollen toe met deze machtigingen aan vertrouwde gebruikers.',
     'role_asset_desc' => 'Deze machtigingen bepalen de standaard toegang tot de assets binnen het systeem. Machtigingen op boeken, hoofdstukken en pagina\'s overschrijven deze instelling.',
     'role_asset_admins' => 'Beheerders krijgen automatisch toegang tot alle inhoud, maar deze opties kunnen gebruikersinterface opties tonen of verbergen.',
-    'role_asset_image_view_note' => 'This relates to visibility within the image manager. Actual access of uploaded image files will be dependant upon system image storage option.',
+    'role_asset_image_view_note' => 'Dit heeft betrekking op de zichtbaarheid binnen de afbeeldingsbeheerder. De werkelijke toegang tot geüploade afbeeldingsbestanden hangt af van de gekozen opslagmethode.',
     'role_all' => 'Alles',
     'role_own' => 'Eigen',
     'role_controlled_by_asset' => 'Gecontroleerd door de asset waar deze is geüpload',
@@ -172,6 +177,7 @@ return [
 
     // Users
     'users' => 'Gebruikers',
+    'users_index_desc' => 'Creëer en beheer individuele gebruikersaccounts binnen het systeem. Gebruikersaccounts worden gebruikt voor aanmelding en toekenning van inhoud en activiteiten. Toegangsmachtigingen zijn voornamelijk gebaseerd op rollen, maar het eigendom van gebruikersinhoud en andere factoren kunnen ook van invloed zijn op machtigingen en toegang.',
     'user_profile' => 'Gebruikersprofiel',
     'users_add_new' => 'Gebruiker toevoegen',
     'users_search' => 'Gebruiker zoeken',
@@ -241,6 +247,8 @@ return [
 
     // Webhooks
     'webhooks' => 'Webhooks',
+    'webhooks_index_desc' => 'Webhooks zijn een manier om gegevens naar externe URL\'s te sturen wanneer bepaalde acties en gebeurtenissen in het systeem plaatsvinden, wat op gebeurtenissen gebaseerde integratie met externe platforms zoals berichten- of notificatiesystemen mogelijk maakt.',
+    'webhooks_x_trigger_events' => '1 trigger event|:count trigger events',
     'webhooks_create' => 'Nieuwe Webhook Maken',
     'webhooks_none_created' => 'Er zijn nog geen webhooks aangemaakt.',
     'webhooks_edit' => 'Bewerk Webhook',
@@ -280,6 +288,7 @@ return [
         'da' => 'Dansk (Deens)',
         'de' => 'Deutsch (Duits)',
         'de_informal' => 'Deutsch (Du) (Informeel Duits)',
+        'el' => 'ελληνικά',
         'es' => 'Español (Spaans)',
         'es_AR' => 'Español Argentina (Argentijns Spaans)',
         'et' => 'Eesti keel (Estisch)',

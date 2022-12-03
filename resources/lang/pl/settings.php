@@ -81,7 +81,7 @@ return [
     'maint_image_cleanup_success' => ':count potencjalnie nieużywane obrazki zostały znalezione i usunięte!',
     'maint_image_cleanup_nothing_found' => 'Nie znaleziono żadnych nieużywanych obrazków. Nic nie zostało usunięte!',
     'maint_send_test_email' => 'Wyślij testową wiadomość e-mail',
-    'maint_send_test_email_desc' => 'Ta opcje wyśle wiadomość testową na adres e-mail podany w Twoim profilu',
+    'maint_send_test_email_desc' => 'Ta opcja wyśle wiadomość testową na adres e-mail podany w Twoim profilu.',
     'maint_send_test_email_run' => 'Wyślij testową wiadomość e-mail',
     'maint_send_test_email_success' => 'E-mail wysłany na adres :address',
     'maint_send_test_email_mail_subject' => 'E-mail testowy',
@@ -89,10 +89,10 @@ return [
     'maint_send_test_email_mail_text' => 'Gratulacje! Otrzymałeś tego e-maila więc Twoje ustawienia poczty elektronicznej wydają się być prawidłowo skonfigurowane.',
     'maint_recycle_bin_desc' => 'Usunięte półki, książki, rozdziały i strony są wysyłane do kosza, aby mogły zostać przywrócone lub trwale usunięte. Starsze przedmioty w koszu mogą zostać automatycznie usunięte po pewnym czasie w zależności od konfiguracji systemu.',
     'maint_recycle_bin_open' => 'Otwórz kosz',
-    'maint_regen_references' => 'Regenerate References',
-    'maint_regen_references_desc' => 'This action will rebuild the cross-item reference index within the database. This is usually handled automatically but this action can be useful to index old content or content added via unofficial methods.',
-    'maint_regen_references_success' => 'Reference index has been regenerated!',
-    'maint_timeout_command_note' => 'Note: This action can take time to run, which can lead to timeout issues in some web environments. As an alternative, this action be performed using a terminal command.',
+    'maint_regen_references' => 'Zregeneruj odniesienia',
+    'maint_regen_references_desc' => 'Ta akcja przebuduje bazodanowy indeks referencji między pozycjami. Zazwyczaj jest to obsługiwane automatycznie, jednak ta akcja wciąż może być przydatna do indeksowania starej zawartości, lub dodanej nieoficjalnymi metodami.',
+    'maint_regen_references_success' => 'Indeks referencji został zregenerowany!',
+    'maint_timeout_command_note' => 'Uwaga: Ta akcja potrzebuje czasu na wykonanie, co może prowadzić do problemów z limitami czasu utrzymywania połączenia w niektórych środowiskach webowych. Alternatywnie ta akcja może być wykonana z użyciem polecenia terminalowego.',
 
     // Recycle Bin
     'recycle_bin' => 'Kosz',
@@ -133,6 +133,11 @@ return [
     // Role Settings
     'roles' => 'Role',
     'role_user_roles' => 'Role użytkowników',
+    'roles_index_desc' => 'Role są używane do grupowania użytkowników i udzielania uprawnień systemowych ich członkom. Gdy użytkownik jest członkiem wielu ról, przyznane uprawnienia będą gromadzone, a użytkownik odziedziczy wszystkie możliwości.',
+    'roles_x_users_assigned' => '1 użytkownik przypisany|:count użytkowników przypisanych',
+    'roles_x_permissions_provided' => '1 uprawnienie|:count uprawnień',
+    'roles_assigned_users' => 'Przypisani Użytkownicy',
+    'roles_permissions_provided' => 'Przyznawane Uprawnienia',
     'role_create' => 'Utwórz nową rolę',
     'role_create_success' => 'Rola utworzona pomyślnie',
     'role_delete' => 'Usuń rolę',
@@ -161,7 +166,7 @@ return [
     'roles_system_warning' => 'Pamiętaj, że dostęp do trzech powyższych uprawnień może pozwolić użytkownikowi na zmianę własnych uprawnień lub uprawnień innych osób w systemie. Przypisz tylko role z tymi uprawnieniami do zaufanych użytkowników.',
     'role_asset_desc' => 'Te ustawienia kontrolują zarządzanie zasobami systemu. Uprawnienia książek, rozdziałów i stron nadpisują te ustawienia.',
     'role_asset_admins' => 'Administratorzy mają automatycznie dostęp do wszystkich treści, ale te opcję mogą być pokazywać lub ukrywać opcje interfejsu użytkownika.',
-    'role_asset_image_view_note' => 'This relates to visibility within the image manager. Actual access of uploaded image files will be dependant upon system image storage option.',
+    'role_asset_image_view_note' => 'To odnosi się do widoczności w ramach menedżera obrazów. Rzeczywista możliwość dostępu do przesłanych plików obrazów będzie zależeć od systemowej opcji przechowywania obrazów.',
     'role_all' => 'Wszyscy',
     'role_own' => 'Własne',
     'role_controlled_by_asset' => 'Kontrolowane przez zasób, do którego zostały udostępnione',
@@ -172,6 +177,7 @@ return [
 
     // Users
     'users' => 'Użytkownicy',
+    'users_index_desc' => 'Twórz indywidualne konta użytkowników w systemie i zarządzaj nimi. Konta użytkowników są używane do logowania i przypisywania treści i aktywności. Uprawnienia dostępu są przede wszystkim oparte na roli, ale posiadanie przez użytkownika zawartości, podobnie jak inne czynniki może również wpływać na uprawnienia i dostęp.',
     'user_profile' => 'Profil użytkownika',
     'users_add_new' => 'Dodaj użytkownika',
     'users_search' => 'Wyszukaj użytkownika',
@@ -241,6 +247,8 @@ return [
 
     // Webhooks
     'webhooks' => 'Webhooki',
+    'webhooks_index_desc' => 'Webhooki to sposób na wysyłanie danych do zewnętrznych adresów URL, gdy pewne działania i zdarzenia zachodzą w ramach systemu, co umożliwia integrację zdarzeń w systemie z zewnętrznymi platformami, takimi jak systemy wysyłania wiadomości lub powiadamiania.',
+    'webhooks_x_trigger_events' => '1 zdarzenie wyzwalacza|:count zdarzeń wyzwalacza',
     'webhooks_create' => 'Utwórz nowy Webhook',
     'webhooks_none_created' => 'Nie utworzono jeszcze żadnych webhooków.',
     'webhooks_edit' => 'Edytuj Webhook',
@@ -280,6 +288,7 @@ return [
         'da' => 'Dansk',
         'de' => 'Deutsch (Sie)',
         'de_informal' => 'Deutsch (Du)',
+        'el' => 'ελληνικά',
         'es' => 'Español',
         'es_AR' => 'Español Argentina',
         'et' => 'Estoński',

@@ -89,10 +89,10 @@ return [
     'maint_send_test_email_mail_text' => 'Parabéns! Já que você recebeu esta notificação, suas opções de e-mail parecem estar configuradas corretamente.',
     'maint_recycle_bin_desc' => 'Prateleiras, livros, capítulos e páginas deletados são mandados para a lixeira podendo assim ser restaurados ou excluídos permanentemente. Itens mais antigos da lixeira podem vir a ser automaticamente removidos da lixeira após um tempo dependendo da configuração do sistema.',
     'maint_recycle_bin_open' => 'Abrir Lixeira',
-    'maint_regen_references' => 'Regenerate References',
-    'maint_regen_references_desc' => 'This action will rebuild the cross-item reference index within the database. This is usually handled automatically but this action can be useful to index old content or content added via unofficial methods.',
-    'maint_regen_references_success' => 'Reference index has been regenerated!',
-    'maint_timeout_command_note' => 'Note: This action can take time to run, which can lead to timeout issues in some web environments. As an alternative, this action be performed using a terminal command.',
+    'maint_regen_references' => 'Regenerar referências',
+    'maint_regen_references_desc' => 'Essa ação reconstruirá o índice de referência entre itens no banco de dados. Isso geralmente é tratado automaticamente, mas essa ação pode ser útil para indexar conteúdo antigo ou adicionado por métodos não oficiais.',
+    'maint_regen_references_success' => 'O índice de referência foi regenerado!',
+    'maint_timeout_command_note' => 'Observação: essa ação pode levar algum tempo para ser executada, o que pode levar a problemas de tempo limite em alguns ambientes da Web. Como alternativa, esta ação pode ser executada usando um comando de terminal.',
 
     // Recycle Bin
     'recycle_bin' => 'Lixeira',
@@ -133,6 +133,11 @@ return [
     // Role Settings
     'roles' => 'Cargos',
     'role_user_roles' => 'Cargos de Usuário',
+    'roles_index_desc' => 'As funções são usadas para agrupar usuários & fornecer permissão de sistema a seus membros. Quando um usuário é membro de várias funções, os privilégios concedidos serão acumulados e o usuário herdará todas as habilidades.',
+    'roles_x_users_assigned' => '1 usuário atribuído|:count usuários atribuídos',
+    'roles_x_permissions_provided' => '1 permissão|:count permissões',
+    'roles_assigned_users' => 'Usuários atribuídos',
+    'roles_permissions_provided' => 'Permissões fornecidas',
     'role_create' => 'Criar novo Cargo',
     'role_create_success' => 'Cargo criado com sucesso',
     'role_delete' => 'Excluir Cargo',
@@ -161,7 +166,7 @@ return [
     'roles_system_warning' => 'Esteja ciente de que o acesso a qualquer uma das três permissões acima pode permitir que um usuário altere seus próprios privilégios ou privilégios de outros usuários no sistema. Apenas atribua cargos com essas permissões para usuários confiáveis.',
     'role_asset_desc' => 'Essas permissões controlam o acesso padrão para os ativos dentro do sistema. Permissões em Livros, Capítulos e Páginas serão sobrescritas por essas permissões.',
     'role_asset_admins' => 'Administradores recebem automaticamente acesso a todo o conteúdo, mas essas opções podem mostrar ou ocultar as opções da Interface de Usuário.',
-    'role_asset_image_view_note' => 'This relates to visibility within the image manager. Actual access of uploaded image files will be dependant upon system image storage option.',
+    'role_asset_image_view_note' => 'Isso está relacionado à visibilidade no gerenciador de imagens. O acesso real dos arquivos de imagem carregados dependerá da opção de armazenamento de imagem do sistema.',
     'role_all' => 'Todos',
     'role_own' => 'Próprio',
     'role_controlled_by_asset' => 'Controlado pelos ativos nos quais o upload foi realizado',
@@ -172,6 +177,7 @@ return [
 
     // Users
     'users' => 'Usuários',
+    'users_index_desc' => 'Crie e gerencie contas de usuários individuais dentro do sistema. As contas de usuário são usadas para login e atribuição de conteúdo e atividade. As permissões de acesso são baseadas principalmente na função, mas a propriedade do conteúdo do usuário, entre outros fatores, também pode afetar as permissões e o acesso.',
     'user_profile' => 'Perfil do Usuário',
     'users_add_new' => 'Adicionar Novo Usuário',
     'users_search' => 'Pesquisar Usuários',
@@ -215,7 +221,7 @@ return [
     'users_api_tokens_docs' => 'Documentação da API',
     'users_mfa' => 'Autenticação de Múltiplos Fatores',
     'users_mfa_desc' => 'A autenticação multi-fator adiciona outra camada de segurança à sua conta.',
-    'users_mfa_x_methods' => ':count método configurado):count métodos configurados',
+    'users_mfa_x_methods' => ':count método configurado|:count métodos configurados',
     'users_mfa_configure' => 'Configurar Métodos',
 
     // API Tokens
@@ -241,6 +247,8 @@ return [
 
     // Webhooks
     'webhooks' => 'Webhooks',
+    'webhooks_index_desc' => 'Os webhooks são uma maneira de enviar dados para URLs externos quando certas ações e eventos ocorrem dentro do sistema, o que permite a integração baseada em eventos com plataformas externas, como sistemas de mensagens ou notificação.',
+    'webhooks_x_trigger_events' => '1 evento de gatilho|:count evento de gatilho',
     'webhooks_create' => 'Criar novo webhook',
     'webhooks_none_created' => 'Nenhum webhooks foi criado ainda.',
     'webhooks_edit' => 'Editar webhook',
@@ -280,6 +288,7 @@ return [
         'da' => 'Dansk',
         'de' => 'Deutsch (Sie)',
         'de_informal' => 'Deutsch (Du)',
+        'el' => 'ελληνικά',
         'es' => 'Español',
         'es_AR' => 'Español Argentina',
         'et' => 'Eesti keel',

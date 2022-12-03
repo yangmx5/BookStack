@@ -50,7 +50,7 @@ class SearchRunner
      * The provided count is for each entity to search,
      * Total returned could be larger and not guaranteed.
      *
-     * @return array{total: int, count: int, has_more: bool, results: Entity[]}
+     * @return array{total: int, count: int, has_more: bool, results: Collection<Entity>}
      */
     public function searchEntities(SearchOptions $searchOpts, string $entityType = 'all', int $page = 1, int $count = 20): array
     {
@@ -162,7 +162,7 @@ class SearchRunner
         $entityQuery = $entityModelInstance->newQuery()->scopes('visible');
 
         if ($entityModelInstance instanceof Page) {
-            $entityQuery->select(array_merge($entityModelInstance::$listAttributes, ['restricted', 'owned_by']));
+            $entityQuery->select(array_merge($entityModelInstance::$listAttributes, ['owned_by']));
         } else {
             $entityQuery->select(['*']);
         }
@@ -447,7 +447,7 @@ class SearchRunner
 
     protected function filterIsRestricted(EloquentBuilder $query, Entity $model, $input)
     {
-        $query->where('restricted', '=', true);
+        $query->whereHas('permissions');
     }
 
     protected function filterViewedByMe(EloquentBuilder $query, Entity $model, $input)

@@ -8,6 +8,7 @@ use BookStack\Entities\Models\Bookshelf;
 use BookStack\Entities\Models\Chapter;
 use BookStack\Entities\Models\Entity;
 use BookStack\Entities\Models\Page;
+use Exception;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 
@@ -376,20 +377,18 @@ class EntityPermissionsTest extends TestCase
             ->assertSee($title);
 
         $this->put($modelInstance->getUrl('/permissions'), [
-            'restricted'   => 'true',
-            'restrictions' => [
+            'permissions' => [
                 $roleId => [
                     $permission => 'true',
                 ],
             ],
         ]);
 
-        $this->assertDatabaseHas($modelInstance->getTable(), ['id' => $modelInstance->id, 'restricted' => true]);
         $this->assertDatabaseHas('entity_permissions', [
-            'restrictable_id'   => $modelInstance->id,
-            'restrictable_type' => $modelInstance->getMorphClass(),
+            'entity_id'   => $modelInstance->id,
+            'entity_type' => $modelInstance->getMorphClass(),
             'role_id'           => $roleId,
-            'action'            => $permission,
+            $permission         => true,
         ]);
     }
 
@@ -654,5 +653,23 @@ class EntityPermissionsTest extends TestCase
             'html' => 'test content',
         ]);
         $resp->assertRedirect($book->getUrl('/page/test-page'));
+    }
+
+    public function test_book_permissions_can_be_generated_without_error_if_child_chapter_is_in_recycle_bin()
+    {
+        $book = $this->entities->bookHasChaptersAndPages();
+        /** @var Chapter $chapter */
+        $chapter = $book->chapters()->first();
+
+        $this->asAdmin()->delete($chapter->getUrl());
+
+        $error = null;
+        try {
+            $this->entities->setPermissions($book, ['view'], []);
+        } catch (Exception $e) {
+            $error = $e;
+        }
+
+        $this->assertNull($error);
     }
 }
