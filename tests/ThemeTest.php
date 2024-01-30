@@ -78,7 +78,7 @@ class ThemeTest extends TestCase
 
         $page = $this->entities->page();
         $content = new PageContent($page);
-        $content->setNewMarkdown('# test');
+        $content->setNewMarkdown('# test', $this->users->editor());
 
         $this->assertTrue($callbackCalled);
     }
@@ -254,6 +254,40 @@ class ThemeTest extends TestCase
         $this->assertTrue($args[3] instanceof Page);
         $this->assertEquals($page->id, $args[2]->id);
         $this->assertEquals($otherPage->id, $args[3]->id);
+    }
+
+    public function test_event_routes_register_web_and_web_auth()
+    {
+        $functionsContent = <<<'END'
+<?php
+use BookStack\Theming\ThemeEvents;
+use BookStack\Facades\Theme;
+use Illuminate\Routing\Router;
+Theme::listen(ThemeEvents::ROUTES_REGISTER_WEB, function (Router $router) {
+    $router->get('/cat', fn () => 'cat')->name('say.cat');
+});
+Theme::listen(ThemeEvents::ROUTES_REGISTER_WEB_AUTH, function (Router $router) {
+    $router->get('/dog', fn () => 'dog')->name('say.dog');
+});
+END;
+
+        $this->usingThemeFolder(function () use ($functionsContent) {
+
+            $functionsFile = theme_path('functions.php');
+            file_put_contents($functionsFile, $functionsContent);
+
+            $app = $this->createApplication();
+            /** @var \Illuminate\Routing\Router $router */
+            $router = $app->get('router');
+
+            /** @var \Illuminate\Routing\Route $catRoute */
+            $catRoute = $router->getRoutes()->getRoutesByName()['say.cat'];
+            $this->assertEquals(['web'], $catRoute->middleware());
+
+            /** @var \Illuminate\Routing\Route $dogRoute */
+            $dogRoute = $router->getRoutes()->getRoutesByName()['say.dog'];
+            $this->assertEquals(['web', 'auth'], $dogRoute->middleware());
+        });
     }
 
     public function test_add_social_driver()
